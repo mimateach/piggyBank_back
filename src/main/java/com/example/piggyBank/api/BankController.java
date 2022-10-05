@@ -3,11 +3,10 @@ package com.example.piggyBank.api;
 
 import com.example.piggyBank.entity.Bank;
 import com.example.piggyBank.repository.BankRepository;
+import com.example.piggyBank.service.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,24 +14,27 @@ import java.util.List;
 @RequestMapping ("/api/v1/bank")
 public class BankController {
 
-    private final BankRepository bankRepository;
+    private final BankService bankService;
+
     @Autowired
-    public BankController (BankRepository bankRepository) {
-        this.bankRepository = bankRepository;
-    }
+    public BankController(BankService bankService)
 
-
-    @GetMapping("")
+    /* @GetMapping("")
     public String index(){
         return "Hola, página de inicio";
     }
     @GetMapping ("/list")
     public List<Bank> getBanksList(){
-        return bankRepository.findAll();
+        return BankService.findAll();
     }
-    @GetMapping ("/{id")
+    @GetMapping ("/{id}")
     public Bank getById(@PathVariable Long id){
         return bankRepository.findById(id).get();
+    } */
+    /*Create*/
+    @PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody Bank bank) {
+            return ResponseEntity.ok().body(BankService.create(bank));
     }
 
 }

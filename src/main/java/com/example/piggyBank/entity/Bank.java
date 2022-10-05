@@ -1,9 +1,16 @@
 package com.example.piggyBank.entity;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table (name ="banks")
 public class Bank {
     @Id
@@ -11,7 +18,7 @@ public class Bank {
     private Long id;
     /* @Column(name = "nombre") -> renombramos la columna en la base de datos*/
     private String name;
-    private Long quantity;
+    private Integer quantity;
     private Date dueDate;
 
     public Long getId() {
@@ -30,11 +37,11 @@ public class Bank {
         this.name = name;
     }
 
-    public Long getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
