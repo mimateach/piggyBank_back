@@ -9,7 +9,7 @@ import com.example.piggyBank.service.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.example.piggyBank.payload.request.BookRequest;
+import com.example.piggyBank.payload.request.BankRequest;
 import lombok.Builder;
 
 import java.util.List;

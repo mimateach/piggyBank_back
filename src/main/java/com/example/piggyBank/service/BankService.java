@@ -44,7 +44,7 @@ public class BankService {
         return bankRepository.save(bank);
 
     }
-    public Bank  post(BankRequest bankRequest){
+    public Bank  create(BankRequest bankRequest){
         Bank bank = Bank
                 .builder()
                 .name(bankRequest.getName())
@@ -53,6 +53,5 @@ public class BankService {
                 .build();
         return bankRepository.save(bank);
     }
-
 
 }

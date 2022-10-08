@@ -10,4 +10,4 @@ import java.util.Map;
 @CrossOrigin(origins="*")
 @Repository
 public interface BankRepository extends JpaRepository<Bank, Long> {
-
+}
